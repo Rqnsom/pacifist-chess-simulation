@@ -1,0 +1,18 @@
+[package]
+name = "pacifist-chess-simulation"
+version = "0.1.0"
+edition = "2021"
+authors = ["Rqnsom"]
+repository = "https://github.com/Rqnsom/pacifist-chess-simulation"
+description = "Have you ever wondered what a game of chess would look like if it were played by two pacifists?"
+documentation = "https://docs.rs/pacifist-chess-simulation/"
+keywords = ["pacifist-chess", "chess-simulation", "chess"]
+license = "MIT"
+readme = "README.md"
+
+[dependencies]
+rand = "0.8.3"
+ctrlc = "3.2.2"
+clap = { version = "3.1.18", features = ["derive"] }
+chess-notation-parser = "0.2.0"
+chess-turn-engine = "0.1.0"
