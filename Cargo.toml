@@ -14,5 +14,5 @@ readme = "README.md"
 rand = "0.8.3"
 ctrlc = "3.2.2"
 clap = { version = "3.1.18", features = ["derive"] }
-chess-notation-parser = "0.2.0"
-chess-turn-engine = "0.1.0"
+chess-notation-parser = "0.2"
+chess-turn-engine = "0.1"

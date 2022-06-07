@@ -5,8 +5,8 @@ ret=0
 i=0
 games_limit=1000
 
-white=Aggressive
-black=Aggressive
+white=SemiPacifist
+black=SemiPacifist
 results=/tmp/"$white"vs"$black".txt
 
 while [ $ret -eq 0 ] && [ $i -lt $games_limit ]

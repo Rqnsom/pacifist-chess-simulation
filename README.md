@@ -79,9 +79,9 @@ Example #2: The white player wins with `b8=Q#` on the 107th move.
 
 Two fully random players have the most randomized results. Which kind of makes sense.
 
-Example #1: On the 111th move, this game ends in a **stealmate**.
+Example #1: On the 111th move, this game ends in a **stalemate**.
 
-<a href="url"><img src="https://raw.githubusercontent.com/Rqnsom/pacifist-chess-simulation/main/assets/r_vs_r_stealmate_Qf3.gif" align="center" height="648" width="864" border="black"></a>
+<a href="url"><img src="https://raw.githubusercontent.com/Rqnsom/pacifist-chess-simulation/main/assets/r_vs_r_stalemate_Qf3.gif" align="center" height="648" width="864" border="black"></a>
 
 Example #2: The white player wins with `Qa7#` on the 93th move.
 
