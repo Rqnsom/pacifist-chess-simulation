@@ -1,6 +1,6 @@
 [package]
 name = "pacifist-chess-simulation"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Rqnsom"]
 repository = "https://github.com/Rqnsom/pacifist-chess-simulation"
