@@ -6,7 +6,7 @@ i=0
 games_limit=10000
 
 white=Pacifist
-black=Agressive
+black=Aggressive
 
 while [ $ret -eq 0 ] && [ $i -lt $games_limit ]
 do

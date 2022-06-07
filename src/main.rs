@@ -1,8 +1,8 @@
 //! Simple chess simulation with four `random` AI modes
 //! - **Pacifist** - Always choose non-capture moves, if possible.
 //!                  But do prioritize non-capture checkmate turns!
-//! - **Agressive** - Always prefer capture/check turns.
-//!                   But only the checkmate turn has higher priorty.
+//! - **Aggressive** - Always prefer capture/check turns.
+//!                    But only the checkmate turn has higher priorty.
 //! - **SemiPacifist** - Pacifist mode where pawns are allowed to
 //!                      capture other pawns.
 //! - **Random** - Completely random turn decision from the pool of available

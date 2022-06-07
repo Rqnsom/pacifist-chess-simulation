@@ -3,10 +3,10 @@
 
 ret=0
 i=0
-games_limit=100
+games_limit=1000
 
-white=Pacifist
-black=Agressive
+white=Aggressive
+black=Aggressive
 results=/tmp/"$white"vs"$black".txt
 
 while [ $ret -eq 0 ] && [ $i -lt $games_limit ]

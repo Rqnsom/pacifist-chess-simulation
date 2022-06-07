@@ -13,13 +13,13 @@ pub enum Player {
     /// Player picks completely random turn
     Random,
 
-    /// Agressive player that will capture whenever possible.
+    /// Aggressive player that will capture whenever possible.
     ///
     /// Turn priority order:
     /// 1. Checkmate
     /// 2. Capture or Check
     /// 3. Any other turn
-    Agressive,
+    Aggressive,
 
     /// Pieceful player that never captures anything unless it is forced with
     /// check
@@ -36,7 +36,7 @@ impl Player {
         const PAWN_CAN_ATTACK_PAWNS: bool = true;
         match self {
             Self::Random => find_random_turn(game),
-            Self::Agressive => find_aggressive_turn(game),
+            Self::Aggressive => find_aggressive_turn(game),
             Self::SemiPacifist => {
                 find_pieceful_turn(game, PAWN_CAN_ATTACK_PAWNS)
             }
@@ -52,7 +52,7 @@ impl fmt::Display for Player {
             "{}",
             match self {
                 Self::Random => "Random",
-                Self::Agressive => "Agressive",
+                Self::Aggressive => "Aggressive",
                 Self::Pacifist => "Pacifist",
                 Self::SemiPacifist => "SemiPacifist",
             }
@@ -66,7 +66,7 @@ impl FromStr for Player {
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         match s {
             "Random" => Ok(Self::Random),
-            "Agressive" => Ok(Self::Agressive),
+            "Aggressive" => Ok(Self::Aggressive),
             "Pacifist" => Ok(Self::Pacifist),
             "SemiPacifist" => Ok(Self::SemiPacifist),
             _ => Err("Invalid player input"),
