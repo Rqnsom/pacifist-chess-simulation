@@ -33,9 +33,9 @@ In the first game below, **the black player wins with `Qb3#`**.
 In the second game below, the game ends in a **draw** (50 move rule).
 
 <a href="url"><img src="https://raw.githubusercontent.com/Rqnsom/pacifist-chess-simulation/main/assets/p_vs_p_draw_50_move_rule.gif" align="center" height=auto width=100% border="black"></a>
-<hr \>
 
 <a href="url"><img src="https://raw.githubusercontent.com/Rqnsom/pacifist-chess-simulation/main/assets/p_vs_p.png" align="center" height=auto width=100% border="black"></a>
+<hr \>
 
 ### Pacifist player vs Aggressive player
 We can assume such a game will not last very long.
@@ -63,11 +63,11 @@ Well. Unfortunately, most games with aggressive players end up with a draw. Too 
 
 This mode has some quite interesting stats!
 
-Example #1: The black player wins with `Qg3#` on the 123rd move.
+`Example #1`: The black player wins with `Qg3#` on the 123rd move.
 
 <a href="url"><img src="https://raw.githubusercontent.com/Rqnsom/pacifist-chess-simulation/main/assets/sp_vs_sp_black_won_Qg3.gif" align="center" height=auto width=100% border="black"></a>
 
-Example #2: The white player wins with `b8=Q#` on the 107th move.
+`Example #2`: The white player wins with `b8=Q#` on the 107th move.
 
 <a href="url"><img src="https://raw.githubusercontent.com/Rqnsom/pacifist-chess-simulation/main/assets/sp_vs_sp_white_won_b8Q.gif" align="center" height=auto width=100% border="black"></a>
 
@@ -79,16 +79,17 @@ Example #2: The white player wins with `b8=Q#` on the 107th move.
 
 Two fully random players have the most randomized results. Which kind of makes sense.
 
-Example #1: On the 111th move, this game ends in a **stalemate**.
+`Example #1`: On the 111th move, this game ends in a **stalemate**.
 
 <a href="url"><img src="https://raw.githubusercontent.com/Rqnsom/pacifist-chess-simulation/main/assets/r_vs_r_stalemate_Qf3.gif" align="center" height=auto width=100% border="black"></a>
 
-Example #2: The white player wins with `Qa7#` on the 93th move.
+`Example #2`: The white player wins with `Qa7#` on the 93th move.
 
 <a href="url"><img src="https://raw.githubusercontent.com/Rqnsom/pacifist-chess-simulation/main/assets/r_vs_r_white_won_Qa7.gif" align="center" height=auto width=100% border="black"></a>
 
 <a href="url"><img src="https://raw.githubusercontent.com/Rqnsom/pacifist-chess-simulation/main/assets/r_vs_r.png" align="center" height=auto width=100% border="black"></a>
 
+<hr \>
 
 ## About
 This is how I decided to practice my Rust skills. This small experiment was done for, well, mostly fun... I believe! So enjoy these silly statistics and have fun!
@@ -97,3 +98,7 @@ This is how I decided to practice my Rust skills. This small experiment was done
 These two Rust crates below were created just for this project, but now could be reused for something more useful. Less absurd.
  - [chess-notation-parser](https://github.com/Rqnsom/chess-notation-parser)
  - [chess-turn-engine](https://github.com/Rqnsom/chess-turn-engine)
+
+> But why didn't you use any existing chess tools or libraries for this funny project?
+
+That was not the point! The fastest route is not always the best one. The main goal was to learn Rust! And doing the whole chess thing from scratch was an interesting challenge and a jolly adventure. 🙃
