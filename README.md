@@ -45,7 +45,6 @@ In the example below, the aggressive player was black, and it won the game in 18
 <a href="url"><img src="https://raw.githubusercontent.com/Rqnsom/pacifist-chess-simulation/main/assets/p_vs_a_black_won_Ng4.gif" align="center" height=auto width=100% border="black"></a>
 
 <a href="url"><img src="https://raw.githubusercontent.com/Rqnsom/pacifist-chess-simulation/main/assets/p_vs_a.png" align="center" height=auto width=100% border="black"></a>
-
 <hr \>
 
 ### Aggressive player vs Aggressive player
@@ -55,9 +54,9 @@ Two random AI players that both prefer *capture* turns? Would such a game end qu
 <a href="url"><img src="https://raw.githubusercontent.com/Rqnsom/pacifist-chess-simulation/main/assets/a_vs_a_mate_not_possible_Kxe5.gif" align="center" height=auto width=100% border="black"></a>
 
 Well. Unfortunately, most games with aggressive players end up with a draw. Too aggressive and too dumb to be able to win the game more often.
-<hr \>
 
 <a href="url"><img src="https://raw.githubusercontent.com/Rqnsom/pacifist-chess-simulation/main/assets/a_vs_a.png" align="center" height=auto width=100% border="black"></a>
+<hr \>
 
 ### SemiPacifist player vs SemiPacifist player
 
@@ -102,3 +101,31 @@ These two Rust crates below were created just for this project, but now could be
 > But why didn't you use any existing chess tools or libraries for this funny project?
 
 That was not the point! The fastest route is not always the best one. The main goal was to learn Rust! And doing the whole chess thing from scratch was an interesting challenge and a jolly adventure. 🙃
+
+<hr \>
+
+## How to run
+```bash
+# Build
+cargo build --release  # Find binary in target/release directory
+
+# Running tests
+cargo test
+cargo clippy
+```
+
+Snippet from the help usage text:
+```bash
+√ ~/pacifist-chess-simulation/target/release (main) $ ./pacifist-chess-simulation --help
+USAGE:
+    pacifist-chess-simulation [OPTIONS]
+
+OPTIONS:
+    -b, --player-black <PLAYER_BLACK>
+            White player mode: Random/Pacifist/Aggressive/SemiPacifist [default: Pacifist]
+    -t, --animation-frame-duration <ANIMATION_FRAME_DURATION>
+            Animation frame duration in microseconds (animation lasts 20 frames) [default: 50000]
+    -w, --player-white <PLAYER_WHITE>
+            White player mode: Random/Pacifist/Aggressive/SemiPacifist [default: Pacifist]
+    [...]
+```
