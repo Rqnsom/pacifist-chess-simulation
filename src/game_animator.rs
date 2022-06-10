@@ -65,7 +65,7 @@ impl GameAnimator {
         // Record display state before playing the turn
         let before_turn = game.display(fancy_display);
 
-        if let Err(e) = game.play_turn(&turn) {
+        if let Err(e) = game.play_turn(turn) {
             panic!("{}", format!("Unexpected error: {}", e).as_str())
         }
 

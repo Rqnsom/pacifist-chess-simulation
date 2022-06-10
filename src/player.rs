@@ -77,7 +77,7 @@ impl FromStr for Player {
 /// Collect turns from list of `AvailableTurn`s
 fn all_turns(game: &ChessTurnEngine) -> Vec<String> {
     game.available_turns()
-        .into_iter()
+        .iter()
         .map(|turn| String::from(turn.get_turn()))
         .collect::<Vec<String>>()
 }
@@ -85,9 +85,9 @@ fn all_turns(game: &ChessTurnEngine) -> Vec<String> {
 /// Pawn turns that contain capture of another pawn which are not checkmate
 fn get_pawn_capture_other_pawns_turns(game: &ChessTurnEngine) -> Vec<String> {
     game.available_turns()
-        .into_iter()
+        .iter()
         .filter(|avail_turn| {
-            match Turn::try_from(avail_turn.get_turn().as_ref()).unwrap() {
+            match Turn::try_from(avail_turn.get_turn()).unwrap() {
                 Turn::Move(turn) => {
                     turn.check_flag(Flag::CAPTURE)
                         && !turn.check_flag(Flag::CHECKMATE)
@@ -103,7 +103,7 @@ fn get_pawn_capture_other_pawns_turns(game: &ChessTurnEngine) -> Vec<String> {
 
 /// Peaceful include check and checkmate turns
 fn get_all_pieceful_turns(game: &ChessTurnEngine) -> Vec<String> {
-    all_turns(&game)
+    all_turns(game)
         .into_iter()
         .filter(|turn| {
             let turn = Turn::try_from(turn.as_ref()).unwrap();
@@ -114,7 +114,7 @@ fn get_all_pieceful_turns(game: &ChessTurnEngine) -> Vec<String> {
 
 /// All checkmate turns that do not capture
 fn get_all_pieceful_checkmate_turns(game: &ChessTurnEngine) -> Vec<String> {
-    all_turns(&game)
+    all_turns(game)
         .into_iter()
         .filter(|turn| {
             let turn = Turn::try_from(turn.as_ref()).unwrap();
@@ -125,7 +125,7 @@ fn get_all_pieceful_checkmate_turns(game: &ChessTurnEngine) -> Vec<String> {
 
 /// All checkmate turns
 fn get_all_checkmate_turns(game: &ChessTurnEngine) -> Vec<String> {
-    all_turns(&game)
+    all_turns(game)
         .into_iter()
         .filter(|turn| {
             let turn = Turn::try_from(turn.as_ref()).unwrap();
@@ -136,7 +136,7 @@ fn get_all_checkmate_turns(game: &ChessTurnEngine) -> Vec<String> {
 
 /// Get all turns that result with a check
 fn get_all_check_turns(game: &ChessTurnEngine) -> Vec<String> {
-    all_turns(&game)
+    all_turns(game)
         .into_iter()
         .filter(|turn| {
             let turn = Turn::try_from(turn.as_ref()).unwrap();
@@ -148,7 +148,7 @@ fn get_all_check_turns(game: &ChessTurnEngine) -> Vec<String> {
 /// Get all pieceful turns that do not contain check.
 /// Prioritize checkmate turns if any
 fn get_all_pieceful_with_check_turns(game: &ChessTurnEngine) -> Vec<String> {
-    let checkmate = all_turns(&game)
+    let checkmate = all_turns(game)
         .into_iter()
         .filter(|turn| {
             let turn = Turn::try_from(turn.as_ref()).unwrap();
@@ -160,7 +160,7 @@ fn get_all_pieceful_with_check_turns(game: &ChessTurnEngine) -> Vec<String> {
         return checkmate;
     }
 
-    all_turns(&game)
+    all_turns(game)
         .into_iter()
         .filter(|turn| {
             let turn = Turn::try_from(turn.as_ref()).unwrap();
@@ -171,7 +171,7 @@ fn get_all_pieceful_with_check_turns(game: &ChessTurnEngine) -> Vec<String> {
 
 /// All capture turns that are not checkmate turns
 fn get_capture_turns(game: &ChessTurnEngine) -> Vec<String> {
-    all_turns(&game)
+    all_turns(game)
         .into_iter()
         .filter(|turn| {
             let turn = Turn::try_from(turn.as_ref()).unwrap();
@@ -211,7 +211,7 @@ fn find_pieceful_turn(
         return turns.choose(&mut rand::thread_rng()).unwrap().clone();
     }
 
-    all_turns(&game)
+    all_turns(game)
         .choose(&mut rand::thread_rng())
         .unwrap()
         .clone()
@@ -235,7 +235,7 @@ fn find_aggressive_turn(game: &ChessTurnEngine) -> String {
         return turns.choose(&mut rand::thread_rng()).unwrap().clone();
     }
 
-    all_turns(&game)
+    all_turns(game)
         .choose(&mut rand::thread_rng())
         .unwrap()
         .clone()
@@ -243,7 +243,7 @@ fn find_aggressive_turn(game: &ChessTurnEngine) -> String {
 
 /// Randomly choose any turn
 fn find_random_turn(game: &ChessTurnEngine) -> String {
-    all_turns(&game)
+    all_turns(game)
         .choose(&mut rand::thread_rng())
         .unwrap()
         .clone()
